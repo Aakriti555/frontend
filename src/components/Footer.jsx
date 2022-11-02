@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import {Facebook,Instagram,Twitter,WhatsApp} from '@material-ui/icons'
 import { mobile } from '../responsive';
+
 const Container = styled.div`
     display:flex;
     ${mobile({flexDirection:"column"})}
@@ -110,18 +111,21 @@ const Footer = () => {
             </List>
         </AboutUs>
         <Right>
+            
             <SocialContainer>
-                <SocialIcon>
-                    <Facebook style={{fontSize:60}}/>
+                 <SocialIcon>
+                   
+                  <a href="https://www.facebook.com"><Facebook style={{fontSize:60,color:'black',cursor:'pointer'}}/> </a>
+                
                 </SocialIcon>
                 <SocialIcon>
-                    <Instagram style={{fontSize:60}}/>
+                   <a href="https://www.instagram.com/"> <Instagram style={{fontSize:60,color:'black',cursor:'pointer'}}/></a> 
                 </SocialIcon>
                 <SocialIcon>
-                    <Twitter style={{fontSize:60}}/>
+                  <a href="https://twitter.com/" > <Twitter style={{fontSize:60,color:'black',cursor:'pointer'}}/></a>
                 </SocialIcon>
                 <SocialIcon>
-                    <WhatsApp style={{fontSize:60}}/>
+                  <a href="https://www.whatsapp.com/" > <WhatsApp style={{fontSize:60,color:'black',cursor:'pointer'}}/> </a>
                 </SocialIcon>
             </SocialContainer>
         </Right> 

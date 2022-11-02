@@ -1,6 +1,8 @@
-import React from 'react'
+import React  from 'react'
 import styled from 'styled-components'
 import { mobile } from '../responsive'
+import {Link} from 'react-router-dom';
+
 
 const Container = styled.div`
     width:100vw;
@@ -41,26 +43,38 @@ const Button = styled.button`
     margin-bottom:10px;
 `
 
-const Link = styled.a`
-    margin:5px 0px;
-    font-size:12;
-    color:gray;
-`
+
+// const Link = styled.a`
+//     margin:5px 0px;
+//     font-size:12;
+//     color:gray;
+// `
 const Login = () => {
   return (
+    
     <Container>
         <Wrapper>
             <Title>SIGN IN</Title>
             <Form>
                 <Input placeholder = "Username or Email"></Input>
                 <Input placeholder = "Password"></Input>
-                <Button>LOG IN</Button>
-                <Link style = {{cursor:'pointer'}}>Forgotten your Password?</Link>
-                <Link>Not a Member? <u style = {{color:'black',cursor:'pointer'}}>Join Us.</u></Link>
+               <p> <Button>LOG IN</Button>
+                <Link to="/forgotPassword">
+                <h4 style={{ marginBottom: "5%", fontWeight: "bold",color:'black',cursor:'pointer' }}>
+                  Forgot password?
+                </h4>
+                
+              </Link>
+              </p>
+                {/* <Link style = {{cursor:'pointer'}}>Forgotten your Password?</Link> */}
+              <p> Not a Member? <Link to ='/Register' style = {{color:'black',cursor:'pointer'}}>Join Us.
+     </Link> </p>
+     
             </Form>
             
         </Wrapper>
     </Container>
+   
   )
 }
 

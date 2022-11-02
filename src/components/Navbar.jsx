@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import {Search,ShoppingCartOutlined,ArrowDropDownOutlined ,AccountCircleRounded} from "@material-ui/icons";
 import {Badge} from "@material-ui/core";
 import { mobile } from '../responsive';
+import {Link} from 'react-router-dom';
 const Container = styled.div`
     height:60px;
     
@@ -86,9 +87,11 @@ const Navbar = () => {
                 <Language>EN
                     <ArrowDropDownOutlined style={{fontSize:20,display:"flex",alignConter:"center",justifyContent:"center"}}/>
                 </Language>
+                <Link to ='/' style ={{textDecoration:'none' ,color:'black',cursor:'pointer'}}>
                 <Logo>
                     attHire.
                 </Logo>
+                </Link>
             </Left>
             <MFH>
                 <button style = {{border:"none",background:"white",fontSize:14,cursor:"pointer",paddingRight:"5px"}}>MALE</button>
@@ -103,14 +106,18 @@ const Navbar = () => {
                 </SearchContainer>
             </Center>
             <Right>
+                <Link to ='/Login' style = {{color:'black',cursor:'pointer'}}>
                 <MenuItem>
                     <AccountCircleRounded/>
                 </MenuItem>
+                </Link>
+                <Link to ='/Cart'style = {{color:'black',cursor:'pointer'}}>
                 <MenuItem>
                 <Badge badgeContent={4} color="primary">
                       <ShoppingCartOutlined/>
                 </Badge>
                 </MenuItem>
+                </Link>
             </Right>
         </Wrapper>
     </Container>

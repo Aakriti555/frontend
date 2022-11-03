@@ -21,7 +21,12 @@ const Wrapper = styled.div`
 const Title = styled.h1`
     font-size:24px;
     font-weight:300;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 `
+
 const Form = styled.form`
     display:flex;
     flex-direction:column;
@@ -42,6 +47,14 @@ const Button = styled.button`
     cursor:pointer;
     margin-bottom:10px;
 `
+const Logo = styled.h1`
+    font-weight:bold;
+    display:flex;
+    
+    justify-content:center;
+    align-items:center;
+    ${mobile({fontSize:"20px"})}
+`;
 
 
 // const Link = styled.a`
@@ -55,8 +68,18 @@ const Login = () => {
     <Container>
         <Wrapper>
             <Title>SIGN IN</Title>
+            <br/> 
+            <Link to ='/' style ={{textDecoration:'none' ,color:'Maroon',cursor:'pointer'}}>
+                <Logo>
+                                    attHire.
+                </Logo>
+                </Link>
+<br/>
             <Form>
+              <h4>Email</h4>
                 <Input placeholder = "Username or Email"></Input>
+                <br/>
+                <h4>Password</h4>
                 <Input placeholder = "Password"></Input>
                <p> <Button>LOG IN</Button>
                 <Link to="/forgotPassword">

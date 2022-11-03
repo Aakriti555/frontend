@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import { mobile } from '../responsive'
+import {Link} from 'react-router-dom'
 
 const Container = styled.div`
     width:100vw;
@@ -19,6 +20,11 @@ const Wrapper = styled.div`
 const Title = styled.h1`
     font-size:24px;
     font-weight:300;
+    display:flex;
+    
+    justify-content:center;
+    align-items:center;
+
 `
 const Form = styled.form`
     display:flex;
@@ -42,12 +48,28 @@ const Button = styled.button`
     color:white;
     cursor:pointer;
 `
+const Logo = styled.h1`
+    font-weight:bold;
+    display:flex;
+    
+    justify-content:center;
+    align-items:center;
+    ${mobile({fontSize:"20px"})}
+`;
 
 const Register = () => {
   return (
     <Container>
         <Wrapper>
-            <Title>CREATE AN ACCOUNT</Title>
+            <Title>CREATE AN ACCOUNT</Title><br/>
+            <Link to ='/' style ={{textDecoration:'none' ,color:'Maroon',cursor:'pointer'}}>
+                <Logo>
+                                    attHire.
+                </Logo>
+                </Link>
+                <br/><br/>
+            <p>Already have an account <Link to ='/Login' style = {{color:'black',cursor:'pointer'}}>Login
+     </Link></p>
             <Form>
                 <Input placeholder = "First Name"></Input>
                 <Input placeholder = "Last Name"></Input>
@@ -61,6 +83,7 @@ const Register = () => {
             
         </Wrapper>
     </Container>
+    
   )
 }
 

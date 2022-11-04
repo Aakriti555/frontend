@@ -79,6 +79,15 @@ const MenuItem = styled.div`
     margin-right:10px;
     ${mobile({fontSize:"12px" , marginLeft:"5px" ,marginRight:"5px"})}
 `;
+const Button = styled.button`
+    width:100%;
+    border-radius:20px;
+    padding:15px 20px;
+    background-color:black;
+    color:white;
+    cursor:pointer;
+    margin-bottom:10px;
+`;
 const Navbar = () => {
   return (
     <Container>
@@ -106,6 +115,7 @@ const Navbar = () => {
                 </SearchContainer>
             </Center>
             <Right>
+                <Link to ='/Seller' style={{color:'black',cursor:'pointer'}}><Button>Become a seller</Button></Link>
                 <Link to ='/Login' style = {{color:'black',cursor:'pointer'}}>
                 <MenuItem>
                     <AccountCircleRounded/>

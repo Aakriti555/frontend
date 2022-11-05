@@ -1,8 +1,9 @@
 import React , {useState} from 'react';
 import styled from 'styled-components';
-import Navbar from '../components/Navbar';
+// import Navbar from '../components/Navbar';
 import { mobile } from '../responsive';
-import "./Sell.css"
+import "./Sell.css";
+import {Link} from 'react-router-dom';
 const Container = styled.div`
 
 `
@@ -11,6 +12,18 @@ const Wrapper = styled.div`
     padding:20px;
     ${mobile({padding:"10px"})}
 `
+const Product = styled.div`
+   font-size: 30px;
+   font-weight: 600;
+   align-items: center;
+   text-align: center;
+`
+const Logo = styled.h1`
+    font-size: 50px;
+    font-weight:bold;
+    text-align: center;
+    ${mobile({fontSize:"20px"})}
+`;
 
 
 const Sell = () => {
@@ -28,8 +41,14 @@ const Sell = () => {
     } 
   return (
     <Container>
-        <Navbar/>
+        {/* <Navbar/> */}
         <Wrapper>
+         <p> <Product>Sell your product on</Product><Link to ='/' style ={{textDecoration:'none' ,color:'Maroon',cursor:'pointer'}}>
+          <br/><Logo>
+                    attHire.
+                </Logo>
+                </Link> </p>
+            <br/><br/>
         <section> 
             <label>
                 + Add Images

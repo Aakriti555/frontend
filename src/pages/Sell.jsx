@@ -1,9 +1,10 @@
+
 import React , {useState} from 'react';
 import styled from 'styled-components';
-// import Navbar from '../components/Navbar';
+import Navbar from '../components/Navbar';
 import { mobile } from '../responsive';
 import "./Sell.css";
-import {Link} from 'react-router-dom';
+
 const Container = styled.div`
 
 `
@@ -21,7 +22,7 @@ const Product = styled.div`
 const Logo = styled.h1`
     font-size: 50px;
     font-weight:bold;
-    text-align: center;
+    color: Maroon;
     ${mobile({fontSize:"20px"})}
 `;
 
@@ -41,20 +42,15 @@ const Sell = () => {
     } 
   return (
     <Container>
-        {/* <Navbar/> */}
+        <Navbar/>
         <Wrapper>
-         <p> <Product>Sell your product on</Product><Link to ='/' style ={{textDecoration:'none' ,color:'Maroon',cursor:'pointer'}}>
-          <br/><Logo>
-                    attHire.
-                </Logo>
-                </Link> </p>
-            <br/><br/>
+         <Product>Sell your product on <Logo>attHire.</Logo> </Product>
         <section> 
             <label>
                 + Add Images
             <br/>
             <span>Up to 10 images</span>
-            <input type ='file' name='images' onChange={onSelectFile} multiple accept='image/png , image/jpg , image/webp'></input>
+            <input type ='file' name='images' style ={{display:"none"}} onChange={onSelectFile} multiple accept='image/png , image/jpg , image/webp'></input>
             </label>
             <br/>
             { selectedImages.length > 0 &&

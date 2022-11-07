@@ -29,13 +29,14 @@ text-align:center;
 
 `;
 const Button = styled.button`
-    width:30%;
+    width:15%;
     border:none;
     padding:15px 20px;
     background-color:black;
     color:white;
     cursor:pointer;
     margin-bottom:10px;
+    margin-right:20px;
    
 `
 const Are =styled.div`
@@ -54,7 +55,8 @@ const Seller =() =>
         <Title >"Dress to Express"</Title><br/><br/>
         <Are> Are you worried of buying new dress for one Occasion?</Are><br/><br/>
         <Rent> Here! you can get a dress as per your wish and rent it for some days and return after it's use only on 10% rent per day of cost price.<br/> <br/>You can Rent or Sell  your unused cloths to other people and earn money. <br/><br/><br/>
-        <Link to ='/Sell'style={{color:'black',cursor:'pointer'}}><Button>SELL PRODUCT</Button> </Link>
+        <Link to ='/Sell'style={{color:'black',cursor:'pointer'}}><Button>SELL</Button> </Link> 
+        <Link to ='/Hire'style={{color:'black',cursor:'pointer'}}><Button>HIRE</Button> </Link>
          </Rent>
         </Wrapper>
        <Newsletter/>

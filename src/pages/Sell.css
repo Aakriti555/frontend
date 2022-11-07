@@ -21,9 +21,9 @@ label span{
     font-size: small;
     padding-top: 0.5rem;
 }
-input {
+/* input {
     display: none;
-}
+} */
 img{
     padding:0;
     margin : 0;

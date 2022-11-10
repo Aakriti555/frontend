@@ -5,7 +5,7 @@ import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from '@material-ui/icon
 import { mobile } from '../responsive';
 
 const LowerContainer = styled.div`
-    height:90vh;
+    height:120vh;
     width:100%;
     display:flex;
     justify-content:center;

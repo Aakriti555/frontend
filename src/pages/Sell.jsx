@@ -1,17 +1,26 @@
 
+import { TextareaAutosize } from '@material-ui/core';
 import React , {useState} from 'react';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar';
 import { mobile } from '../responsive';
 import "./Sell.css";
+import BottomFooter from '../components/BottomFooter';
 
 const Container = styled.div`
 
 `
 
 const Wrapper = styled.div`
+    // width:40%;
     padding:20px;
-    ${mobile({padding:"10px"})}
+    
+    // background-color:white;
+    // align-items:center;
+    // justify-content:center;
+    ${mobile({width:"75%"})}
+   
+    
 `
 const Product = styled.div`
    font-size: 30px;
@@ -25,8 +34,55 @@ const Logo = styled.h1`
     color: Maroon;
     ${mobile({fontSize:"20px"})}
 `;
+const Form = styled.form`
+    display:flex;
+    // background-color:DimGrey ;
+    flex-direction:column;
 
-
+`;
+const Input = styled.input`
+    font-size:15px;
+    flex:1;
+    min-width:40%;
+    margin:20px 10px 0px 0px;
+    padding:10px
+`;
+const Button = styled.button`
+    width:10%;
+    border:none;
+    margin:10px;
+    padding:15px 20px;
+    background-color:black;
+    color:white;
+    cursor:pointer;
+`;
+const Title =styled.div`
+     text-align: left;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    min-width:10%;
+    margin:10px 0px;
+    padding:10px
+`;
+const Discription = styled.p`
+    display:flex;
+    height:300px;
+    width:41%;
+    
+    position:relative;
+`
+const Select = styled.select`
+    padding:10px;
+    margin-right:17px;
+    margin-top:20px;
+    width:42%;
+    display:flex;
+    justify-content:center;
+    align-content:center;
+`
+const Option = styled.option``
 const Sell = () => {
     const [selectedImages , setSelectedImages] = useState([]);
     const onSelectFile = (event) => {
@@ -40,12 +96,41 @@ const Sell = () => {
         });
         setSelectedImages(imagesArray);
     } 
+
+
   return (
+
     <Container>
         <Navbar/>
         <Wrapper>
          <Product>Sell your product on <Logo>attHire.</Logo> </Product>
+         <Form>
+                  
+                <Title><Input placeholder = "Title"></Input><br/>
+                <Input  placeholder = "Price"  ></Input><br/>
+                
+                <Select>
+                    <Option disabled selected>
+                        Category
+                    </Option>
+                    <Option>Male</Option>
+                    <Option>Female</Option>
+                    <Option>Kids</Option>
+                </Select>    
+               
+                
+                <Discription>
+                    
+                    {/* <Input style ={{height:"100%" ,width:"100%",textAlign:"start"}} placeholder = "Description"></Input><br/> */}
+                    <TextareaAutosize style ={{height:"100%" ,width:"100%",marginTop:"30px"}} placeholder = "Description"></TextareaAutosize><br/>
+                </Discription>
+                
+
+                {/* <Button>CREATE</Button> */}
+                {/* </Title> */}
+            {/* </Form> */}
         <section> 
+            <br/><br/><br/>
             <label>
                 + Add Images
             <br/>
@@ -81,11 +166,14 @@ const Sell = () => {
             }
             </div>
         </section>
-
+        <Button>CREATE</Button>
+        </Title>
+        </Form>
             </Wrapper>
-       
+            <BottomFooter/>
     </Container>
-    
+
+
   )
 }
 

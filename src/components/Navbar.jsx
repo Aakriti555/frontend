@@ -81,7 +81,8 @@ const MenuItem = styled.div`
 `;
 const Button = styled.button`
     width:100%;
-    border-radius:20px;
+    border:none;
+    border-radius:5px;
     padding:15px 20px;
     background-color:black;
     color:white;
@@ -103,11 +104,11 @@ const Navbar = () => {
                 </Link>
             </Left>
             <MFH>
-                <button style = {{border:"none",background:"white",fontSize:14,cursor:"pointer",paddingRight:"5px"}}>MALE</button>
+                <Link to ="/ProductList"><button style = {{border:"none",background:"white",fontSize:14,cursor:"pointer",paddingRight:"5px"}}>MALE</button>
                 <button style = {{border:"none",background:"white",fontSize:14,cursor:"pointer",padding:"5px"}}>FEMALE</button>
                 <button style = {{border:"none",background:"white",fontSize:14,cursor:"pointer",padding:"5px"}}>KIDS</button>
                 <button style = {{border:"none",background:"white",fontSize:14,fontWeight:600,cursor:"pointer",padding:"5px"}}>TRENDING</button>
-            </MFH>
+                </Link> </MFH>
             <Center>
                 <SearchContainer>
                     <Input placeholder='Search'/>
@@ -115,7 +116,7 @@ const Navbar = () => {
                 </SearchContainer>
             </Center>
             <Right>
-                <Link to ='/Seller' style={{color:'black',cursor:'pointer'}}><Button>Become a seller</Button></Link>
+                <Link to ='/Seller' style={{color:'black',cursor:'pointer',border:"none"}}><Button>BECOME A SELLER</Button></Link>
                 <Link to ='/Login' style = {{color:'black',cursor:'pointer'}}>
                 <MenuItem>
                     <AccountCircleRounded/>

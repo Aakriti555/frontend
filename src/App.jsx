@@ -11,7 +11,9 @@ import Login from "./pages/Login";
 import Cart from "./pages/Cart";
 import Seller from "./pages/Seller";
 import Sell from "./pages/Sell";
-
+import Hire from "./pages/Hire";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 const App =()=>{
     return <Routes>
       <Route path ='/' element={<Home/>}/>
@@ -22,6 +24,9 @@ const App =()=>{
       <Route path ='/Cart' element={<Cart/>}/>
       <Route path='/Seller'element={<Seller/>}/>
       <Route path='/Sell' element ={<Sell/>}/>
+      <Route path='/Hire' element={<Hire/>}/>
+      <Route path='/Privacy' element={<Privacy/>}/>
+      <Route path='/Terms' element={<Terms/>}/>
     </Routes>
 };
 

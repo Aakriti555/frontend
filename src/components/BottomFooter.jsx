@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import {LocationOn} from '@material-ui/icons'
 import { mobile } from '../responsive';
+import { Link } from 'react-router-dom';
 const Container = styled.div`
     height:10vh;
     background-color:black;
@@ -50,8 +51,8 @@ const BottomFooter = () => {
             <List>
                 <ListItem>Guides</ListItem>
                 <ListItem>Terms of Sales</ListItem>
-                <ListItem>Terms of Use</ListItem>
-                <ListItem>Privacy Policy</ListItem>
+                <Link to={'/Terms'}><ListItem>Terms of Use</ListItem></Link>
+                <Link to={'/Privacy'}> <ListItem>Privacy Policy</ListItem> </Link>
             </List>
         </Right>
     </Container>

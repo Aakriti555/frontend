@@ -51,8 +51,8 @@ const BottomFooter = () => {
             <List>
                 <ListItem>Guides</ListItem>
                 <ListItem>Terms of Sales</ListItem>
-                <Link to={'/Terms'}><ListItem>Terms of Use</ListItem></Link>
-                <Link to={'/Privacy'}> <ListItem>Privacy Policy</ListItem> </Link>
+                <Link to={'/Terms'}style = {{color:'black',cursor:'pointer'}}><ListItem>Terms of Use</ListItem></Link>
+                <Link to={'/Privacy'}style = {{color:'black',cursor:'pointer'}}> <ListItem>Privacy Policy</ListItem> </Link>
             </List>
         </Right>
     </Container>

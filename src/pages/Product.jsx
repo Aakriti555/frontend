@@ -9,7 +9,8 @@ import BottomFooter from '../components/BottomFooter'
 import { mobile } from '../responsive'
 import { FaStar } from "react-icons/fa";
 import { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+// import Calendar from 'react-input-calendar';
 const colors = {
     orange: "#FFBA5A",
     grey: "#a9a9a9"
@@ -91,23 +92,6 @@ const AddContainer = styled.div`
     ${mobile({width:"100%"})}
 `
 
-// const AmountContainer = styled.div`
-//     display:flex;
-//     align-items:center;
-//     font-weight:700;
-// `
-
-// const Amount = styled.span`
-//     width:30px;
-//     height:30px;
-//     border-radius:10px;
-//     border:1px solid teal;
-//     display:flex;
-//     align-items:center;
-//     justify-content:center;
-//     margin:0px 5px;
-// `
-
 const Button = styled.button`
     padding :10px;
     border:none;
@@ -127,6 +111,35 @@ const Rating = styled.div`
     display:flex;
     margin-top:10px;
 `
+const Text=styled.div`
+font-size:25px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+margin:auto;
+
+`
+// const Option = styled.option``
+const Select=styled.select`
+    padding:15px;
+    margin-top:40px;
+    margin-left:100px;
+    width:50%;
+    display:flex;
+    justify-content:center;
+    align-content:center;
+`
+const Option = styled.option``
+const Logo = styled.h1`
+    font-weight:bold;
+    display:flex;
+    justify-content:center;
+    align-content:center;
+    ${mobile({fontSize:"20px"})}
+`;
+
+
 const Product = () => {
     const [currentValue, setCurrentValue] = useState(0);
   const [hoverValue, setHoverValue] = useState(undefined);
@@ -143,6 +156,14 @@ const Product = () => {
   const handleMouseLeave = () => {
     setHoverValue(undefined)
   }
+  const [popup,setPop]=useState(false)
+  const handleClickOpen=()=>{
+      setPop(!popup)
+  }
+  const closePopup=()=>{
+      setPop(false)
+  }
+  
   return (
     <Container>
         <Navbar/>
@@ -177,8 +198,57 @@ const Product = () => {
                     </Filter>
                 </FilterContainer>
                 <AddContainer>
-                  <Link to="/Cart">  <Button>BUY</Button> </Link>
-                    <Button>RENT</Button>
+                  <Link to={"/Cart" }style = {{color:'black',cursor:'pointer'}}>  <Button>BUY</Button> </Link>
+                   {/* <Link to ='/Popup'> <Button>RENT</Button></Link> */}
+                   <div>
+       <Button onClick={handleClickOpen}>Rent</Button>
+            <div>
+                {
+                    popup?
+                    <div style={styles.main}className="main">
+                        <div style={styles.popup}className="popup">
+                            <div className="header">
+                            <h2  style={{cursor:"pointer"}}onClick={closePopup}>X</h2>
+                            <Link to ='/' style ={{textDecoration:'none' ,color:'Maroon',cursor:'pointer'}}>
+                <Logo>
+                    attHire.
+                </Logo>
+                </Link><br/>
+                                <Text>For how many days you want to rent this cloth? </Text>
+                                <Select>
+                    <Option disabled selected>
+                        DAYS
+                   </Option>
+                    <Option>1</Option>
+                    <Option>2</Option>
+                    <Option>3</Option>
+                  
+                    <Option>4</Option>
+                    <Option>5</Option>
+                    <Option>6</Option>    
+                    <Option>7</Option>
+                    <Option>8</Option>
+                    <Option>9</Option>
+                   <Option>10</Option>
+                   
+                </Select> 
+                <br/><br/><br/>
+                <Link to ='/Cart'style = {{color:'black',cursor:'pointer'}}><Button style={{width:"40%",
+    border:"none",
+    padding:"15px 20px",
+    backgroundColor:"black",
+    color:"white",
+    cursor:"pointer",
+    marginLeft:"150px"}}>Rent</Button></Link>
+                                
+                          
+                            </div>
+                           
+                        </div>
+                    </div>:""
+                }
+            </div>
+    </div>
                 </AddContainer>
                 <Rating>
             <div style={styles.container}>
@@ -253,7 +323,40 @@ const Product = () => {
       padding: 10,
       borderRadius:10,
       
-    }
+    },
+    main:{
+      backgroundColor : "rgba(39, 145, 216,0.710)",
+      height: "100vh",
+      width: "100%",
+      position:"absolute",
+      top: "0",
+      display:"flex",
+      justifyContent:"center",
+      alignItems:"center",
+      left: "0",
+      bottom: "0",
+      
+  },
+  popup: {
+      height: "400px",
+      width: "50%",
+      backgroundColor: "white",
+      position: "absolute",
+      top: "25%",
+      textAlign:'right',
+      
+      // display:"flex",
+      // justifyContent:"center",
+      // alignItems:"center",
+      right: "25%",
+  },
+  
+  header: {
+      display: "flex",
+      justifyContent: "space-between",
+      padding:"0 30px 0 15px",
+      borderBottom: "2px solid black",
+  }
 };
 
 

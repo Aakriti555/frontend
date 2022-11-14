@@ -14,6 +14,7 @@ import Sell from "./pages/Sell";
 import Hire from "./pages/Hire";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
+// import Popup from "./pages/Popup";
 const App =()=>{
     return <Routes>
       <Route path ='/' element={<Home/>}/>
@@ -27,6 +28,7 @@ const App =()=>{
       <Route path='/Hire' element={<Hire/>}/>
       <Route path='/Privacy' element={<Privacy/>}/>
       <Route path='/Terms' element={<Terms/>}/>
+      {/* <Route path='/Popup' element={<Popup/>}/> */}
     </Routes>
 };
 

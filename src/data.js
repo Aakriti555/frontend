@@ -104,3 +104,14 @@ export const PopularProducts = [
         img: "https://media.gucci.com/style/DarkGray_South_0_160_316x316/1643823903/615044_XJD2V_2597_001_100_0000_Light.jpg",
     }
 ]
+
+export const CartProduct = [
+    {
+        id : 1,
+        title :"Nike Shoe",
+        description : "",
+        price: "1200",
+        img: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/7fb440c1-b6b5-409a-9f1d-2d2ffefc377a/air-force-1-07-shoes-Wpr816.png",
+        quantity:1,
+    }
+]

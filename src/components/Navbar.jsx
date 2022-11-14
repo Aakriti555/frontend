@@ -4,6 +4,9 @@ import {Search,ShoppingCartOutlined,ArrowDropDownOutlined ,AccountCircleRounded}
 import {Badge} from "@material-ui/core";
 import { mobile } from '../responsive';
 import {Link} from 'react-router-dom';
+import { useContext } from 'react';
+import {CartContext} from '../pages/Cart';
+
 const Container = styled.div`
     height:60px;
     
@@ -90,6 +93,9 @@ const Button = styled.button`
     margin-bottom:10px;
 `;
 const Navbar = () => {
+    
+    //const {totalItem} = useContext(CartContext);
+   //const {totalItem} = useContext(CartContext);
   return (
     <Container>
         <Wrapper>
